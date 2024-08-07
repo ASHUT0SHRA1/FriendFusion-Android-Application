@@ -2,7 +2,6 @@ This is a new [**React Native**](https://reactnative.dev) project, bootstrapped 
 
 
 https://github.com/user-attachments/assets/7ef67507-dd85-4f8a-a208-0ecd8438e93c
-<img src="https://github.com/user-attachments/assets/06bf6d4f-ccc6-44ff-b587-8e281dd9fa22" width="50%" height="50%">
 
 ![WhatsApp Image 2024-08-07 at 2 28 17 PM](https://github.com/user-attachments/assets/06bf6d4f-ccc6-44ff-b587-8e281dd9fa22)  
 ![WhatsApp Image 2024-08-07 at 2 28 18 PM](https://github.com/user-attachments/assets/6864fdfe-aee5-4918-aa54-6bce9d578aae)
