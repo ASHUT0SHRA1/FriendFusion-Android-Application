@@ -1,20 +1,11 @@
 
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
-<div>
-    <a href="" target="blank"><img align="center" src="https://github.com/user-attachments/assets/c22a8898-0ad3-4c41-bb39-20fea487a7bf" height="500" /></a>
+<a href="" target="blank"><img align="center" src="https://github.com/user-attachments/assets/c22a8898-0ad3-4c41-bb39-20fea487a7bf" height="500" /></a> <a href="" target="blank"><img align="center" src="https://github.com/user-attachments/assets/5e9346e1-5d01-4b2a-9377-08915e4e1511" height="500"  /></a>
 
-    <a href="" target="blank"><img align="center" src="https://github.com/user-attachments/assets/1aed24af-8226-44af-be0b-bbbea6b0192b" height="500"  /></a>
-</div>
-<a href="" target="blank"><img align="center" src="https://github.com/user-attachments/assets/5e9346e1-5d01-4b2a-9377-08915e4e1511" height="500"  /></a>
+<a href="" target="blank"><img align="center" src="https://github.com/user-attachments/assets/a37d6b36-f5ae-40f0-8277-4645bd3d6780" height="500"  /></a><a href="" target="blank"><img align="center" src="https://github.com/user-attachments/assets/6079a512-7120-4a32-92bf-d83abe24f21f" height="500"  /></a>
 
-<a href="" target="blank"><img align="center" src="https://github.com/user-attachments/assets/a37d6b36-f5ae-40f0-8277-4645bd3d6780" height="500"  /></a>
-
-<a href="" target="blank"><img align="center" src="https://github.com/user-attachments/assets/6079a512-7120-4a32-92bf-d83abe24f21f" height="500"  /></a>
-
-<a href="" target="blank"><img align="center" src="https://github.com/user-attachments/assets/30ab6fad-19d5-4826-84ff-c3f35d7749ea" height="500"  /></a>
-
-<a href="" target="blank"><img align="center" src="https://github.com/user-attachments/assets/a0c820e0-387c-4755-94d3-d2773d5d7ce3" height="500"  /></a>
+<a href="" target="blank"><img align="center" src="https://github.com/user-attachments/assets/30ab6fad-19d5-4826-84ff-c3f35d7749ea" height="500"  /></a><a href="" target="blank"><img align="center" src="https://github.com/user-attachments/assets/a0c820e0-387c-4755-94d3-d2773d5d7ce3" height="500"  /></a>
 
 <a href="" target="blank"><img align="center" src="https://github.com/user-attachments/assets/f872dc4d-d9f7-4e4c-a154-0b0e70fb6a34" height="500"  /></a>
 
