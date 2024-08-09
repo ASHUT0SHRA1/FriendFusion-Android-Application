@@ -25,9 +25,9 @@ const About = () => {
 
 
       <ScrollView>
-        <RequestList userid={id}/>
+        <RequestList userid={id} />
         <Text>Add Friends</Text>
-        <UserCard items={userlist} userId = {id} isRequest={false} />
+        <UserCard items={userlist} userId={id} />
       </ScrollView>
       <Footer />
     </View>
@@ -41,6 +41,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "space-between",
     marginTop: 10,
-    margin: 1
+    margin: 1, 
+    // backgroundColor : '#8ecae6'
   }
 })

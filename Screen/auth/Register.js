@@ -21,9 +21,7 @@ const Register = ({ navigation }) => {
             }
             setloading(false);
             const { data } = await axios.post(`/auth/register`, { name, email, password });
-            // Alert.alert(data && data.message);
             navigation.replace('Login')
-            // console.log("Register Data => " , name , email , password)
         } catch (error) {
             Alert.alert(error.response.data.message);
             setloading(false)
@@ -69,7 +67,7 @@ const styles = StyleSheet.create({
         fontSize: 40,
         fontWeight: 'bold',
         textAlign: "center",
-        color: '#1e2225',
+        color: 'black',
         marginBottom: 20
     },
     linkText: {

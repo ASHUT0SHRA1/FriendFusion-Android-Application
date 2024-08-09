@@ -1,18 +1,21 @@
 import { StyleSheet, Text, View } from 'react-native'
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import Posts from '../Component/Posts'
 import axios from 'axios'
+import { AuthContext } from '../context/authcontext'
 
 const MyPost = () => {
   const [mypost, setmypost] = useState([]);
   const [loading, setloading] = useState(false);
+  const [state] = useContext(AuthContext);
+  const id = state.user._id;
   useEffect(() => {
 
   }, [mypost]);
   const getmyPost = async () => {
     try {
       setloading(true);
-      const { data } = await axios.get('/post/user-post');
+      const { data } = await axios.get(`/post/user-post/${id}`);
       setmypost(data?.userposts)
       setloading(false);
 
@@ -25,8 +28,16 @@ const MyPost = () => {
     getmyPost();
   }, []);
   return (
+    <View style={{margin : 5}}>
+    {
+      !loading ? 
+    <Posts item={mypost} mypostscreen={true} /> : 
+      <View style={{justifyContent : 'center' , alignItems : 'center'}}>
+        <Text>Loading</Text>
+      </View>
+    }
 
-    <Posts item={mypost} mypostscreen={true} />
+    </View>
   )
 }
 

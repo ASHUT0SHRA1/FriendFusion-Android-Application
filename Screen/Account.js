@@ -3,7 +3,7 @@ import React, { useContext, useState } from 'react'
 import { AuthContext } from '../context/authcontext';
 import Footer from '../Menus/Footer';
 
-import UserImg from '../Assets/user.png'
+import UserImg from '../Assets/account.png'
 import { ScrollView, TextInput } from 'react-native-gesture-handler';
 import axios from 'axios';
 import MyPost from './MyPost';
@@ -26,11 +26,11 @@ const Account = () => {
 
             setloading(false);
             let UD = JSON.stringify(data);
-            console.log(token);
+            // console.log(token);
             setstate({ ...state, user: UD?.upadteUser })
         } catch (error) {
-            console.log(error);
-            console.log(token)
+            // console.log(error);
+            // console.log(token)
             Alert.alert(error.response.data.message);
             setloading(false)
         }
@@ -38,17 +38,19 @@ const Account = () => {
     return (
         <View style={styles.container}>
             {/* <Headermenu/> */}
-            <ScrollView>
+            <>
                 {
                     visible ? <UserupdateModal handleUpdate={handleUpdate} visible={visible} setVisible={setvisible} state={state} setname={setname} setpassword={setpassword} loading={loading} setloading={setloading} /> : null
                 }
                 <View>
                     <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 30, marginLeft: 10, borderBottomWidth: 1, paddingBottom: 10, marginRight: 20 }}>
                         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                            <Image source={UserImg} style={{ height: 120, width: 120, borderRadius: 60 }} />
-                            <View style={{ marginLeft: 10, justifyContent: 'center', alignItems: 'center', height: 120, width: 140 }}>
-                                <Text style={{ fontSize: 17, fontWeight: '800', margin: 5, color: 'black' }}>{name}</Text>
-                                <Text style={{ fontSize: 17, fontWeight: '800', margin: 5, color: 'blue' }}>{email}</Text>
+                            <Image source={UserImg} style={{ height: 80, width: 80, borderRadius: 30 }} />
+                            <View style={{ 
+                                marginLeft: 10,   
+                                }}>
+                                <Text style={{ fontSize: 17, fontWeight: '400', margin: 5, color: 'black'}}>{name}</Text>
+                                <Text style={{ fontSize: 14, fontWeight: '600', margin: 5, color: 'blue'  }}>{email}</Text>
                             </View>
                         </View>
                         <View>
@@ -62,10 +64,10 @@ const Account = () => {
 
 
                 </View>
-                <View>
+                <ScrollView>
                     <MyPost />
-                </View>
-            </ScrollView>
+                </ScrollView>
+            </>
 
             <Footer />
         </View>

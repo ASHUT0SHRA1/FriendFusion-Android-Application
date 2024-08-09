@@ -34,12 +34,14 @@ const Screenmenu = () => {
           <Stack.Screen
             name="Post"
             component={Post}
+            options={{ headerShown : false }}
+
 
           />
           <Stack.Screen
             name="About"
             component={About}
-            options={{ headerBackVisible: false }}
+            options={{ headerShown : false }}
 
           />
           <Stack.Screen

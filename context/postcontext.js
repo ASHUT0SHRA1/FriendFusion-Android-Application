@@ -1,40 +1,31 @@
 import React, { createContext, useEffect, useState } from "react";
 import axios from "axios";
 
-const PostContext = createContext(); 
+const PostContext = createContext();
 
-const PostProvider = ({ children }) => { 
+const PostProvider = ({ children }) => {
 
     const [loading, setLoading] = useState(false);
-    const [posts, setPosts] = useState([]); 
-    const [mypost , setmypost] = useState([]);
-    const getAllPosts = async() => {
-        setLoading(true);
+    const [posts, setPosts] = useState([]);
+    const getAllPosts = async () => {
         try {
+            setLoading(true);
             const { data } = await axios.get('/post/get-all-post');
             setPosts(data?.posts);
+            setLoading(false);
         } catch (error) {
             console.error(error);
         }
     };
-    const getMyPost = async() =>{
-        // setLoading(true);
-        // try {
-        //     const {data} = await axios.get('/post/user-post' );
-        //     setmypost([...mypost , data?.userposts]);
-        // } catch (error) {
-        //     console.log(error)
-            
-        // }
-    }
-    
+
+
     useEffect(() => {
         getAllPosts();
 
     }, []);
-    
+
     return (
-        <PostContext.Provider value={[ posts, setPosts , getAllPosts] }>
+        <PostContext.Provider value={[posts, setPosts, getAllPosts]}>
             {children}
         </PostContext.Provider>
     );

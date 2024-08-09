@@ -106,7 +106,7 @@ export default Chatscreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor : '#ffff'
 
   },
   messageList: {
@@ -114,7 +114,7 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   myMessage: {
-    backgroundColor: '#ddd',
+    backgroundColor: '#0a81d1',
     padding: 10,
     borderRadius: 5,
     alignSelf: 'flex-end',
@@ -123,7 +123,7 @@ const styles = StyleSheet.create({
     borderRadius: 10
   },
   receivedMessage: {
-    backgroundColor: 'gray',
+    backgroundColor: '#44cfcb',
     padding: 10,
     marginBottom: 5,
     width: '70%',
@@ -142,14 +142,14 @@ const styles = StyleSheet.create({
   },
   textInput: {
     flex: 1,
-    backgroundColor: '#f5f5f5',
+    backgroundColor: '#94fbab',
     padding: 8,
     borderRadius: 5,
   },
   sendButton: {
     marginLeft: 10,
     padding: 10,
-    backgroundColor: '#4CAF50',
+    backgroundColor: '#388659',
     borderRadius: 5,
   },
   sendButtonText: {

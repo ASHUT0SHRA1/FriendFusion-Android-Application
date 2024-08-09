@@ -1,13 +1,16 @@
 import { StyleSheet, Text, TextInput, View } from 'react-native'
 import React from 'react'
 
-const InputTextCompo = ({title , secureText , keyboardType , value , setvalue }) => {
+const InputTextCompo = ({ title, secureText, keyboardType, value, setvalue  }) => {
   return (
     <View style={styles.textinputCompo}>
-      <Text>{title}</Text>
-      <TextInput style={styles.inputBox} secureTextEntry={secureText} placeholder={keyboardType}
-      value={value}
-      onChangeText={(text)=>{setvalue(text)}}
+      <Text style={{fontSize : 13 , fontWeight : '400' , color : 'black' }}>{title}</Text>
+      <TextInput 
+        style={styles.inputBox} 
+        secureTextEntry={secureText} 
+        placeholder={keyboardType}
+        value={value}
+        onChangeText={(text) => { setvalue(text) }}
       />
     </View>
   )
@@ -16,14 +19,18 @@ const InputTextCompo = ({title , secureText , keyboardType , value , setvalue })
 export default InputTextCompo
 
 const styles = StyleSheet.create({
-    inputBox: {
-        height : 40 , 
-        marginBottom : 20 , 
-        backgroundColor : '#ffffff', 
-        borderRadius  :10 ,
-        marginTop : 10 , 
-    }, 
-    textinputCompo : {
-        marginHorizontal : 10 
-    }
+  inputBox: {
+    // height : 40 , 
+    marginBottom: 20,
+    backgroundColor: '#ffffff',
+    borderRadius: 10,
+    marginTop: 10,
+    height: 50,
+    paddingHorizontal: 20,
+    borderWidth: 1,
+    borderRadius: 7
+  },
+  textinputCompo: {
+    marginHorizontal: 10
+  }
 })

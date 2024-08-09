@@ -71,8 +71,6 @@ const Posts = ({ item, mypostscreen }) => {
               {
                 mypostscreen ? <TouchableOpacity onPress={() =>
                   handleDelete(items?._id)
-                  // console.log(items)
-
                 }>
                   <Image source={trashIcon} style={{ height: 25, width: 25 , marginRight: 20 }} />
 
@@ -105,44 +103,11 @@ const Posts = ({ item, mypostscreen }) => {
                 <Text style={styles.postedBy}>{items?.postedBy?.name}</Text>
                 <Text style={styles.date}>{moment(items?.createdAt).format('DD-MM-YYYY')}</Text>
               </View>
-
-
             </View>
           </View>
         ))
       }
     </View>
-    // <FlatList
-    //   data={item}
-    //   renderItem={({ item  }) => (
-    //     <View style={styles.postContainer}>
-    //       <Text style={styles.title}>{item?.title}</Text>
-    //       <Text style={styles.description}>{item?.description}</Text>
-    //       <View style={{
-    //         flexDirection: 'row',
-    //         justifyContent: 'space-between',
-    //         borderTopWidth : 0.5, 
-    //         marginTop : 10 ,
-    //         alignItems : 'center',
-    //       }}>
-    //         <View style={styles.infoContainer}>
-    //           <Image source={heartIcon} style={{ height: 20, width: 20, marginRight: 10 }} />
-    //           <Text>Like</Text>
-    //         </View>
-    //         <View style={styles.infoContainer}>
-    //           <Text style={styles.postedBy}>{item?.postedBy.name}</Text>
-    //           <Text style={styles.date}>{moment(item?.createdAt).format('DD-MM-YYYY')}</Text>
-    //         </View>
-
-
-    //       </View>
-    //     </View>
-    //   )}
-    //   keyExtractor={item => item?._id}
-
-    // />
-
-
   );
 };
 
