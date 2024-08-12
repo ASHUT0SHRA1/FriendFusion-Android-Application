@@ -6,10 +6,7 @@ import { useNavigation } from '@react-navigation/native';
 
 const FriendsListcompo = ({userlist, buttonName, userid}) => {
     const navigation = useNavigation();
-    useEffect(() => {
-        
-        
-    }, []);
+
     return (
     <View>
       {
@@ -19,7 +16,7 @@ const FriendsListcompo = ({userlist, buttonName, userid}) => {
                             <View style={
                                 styles.imgcontainer
                             }>
-                                <Image source={userIcon} style={{ height: 30, width: 30, }} />
+                                <Image source={item?.image ? {uri : item?.image} : userIcon} style={{ height: 30, width: 30, }} />
                             </View>
                             <View style={{ alignItems: 'center' }}>
                                 <Text style={{ fontSize: 18, textAlign: "center" }}>{item?.name}</Text>

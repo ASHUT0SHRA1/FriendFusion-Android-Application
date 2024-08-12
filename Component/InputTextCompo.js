@@ -19,8 +19,7 @@ const InputTextCompo = ({ title, secureText, keyboardType, value, setvalue  }) =
 export default InputTextCompo
 
 const styles = StyleSheet.create({
-  inputBox: {
-    // height : 40 , 
+  inputBox: { 
     marginBottom: 20,
     backgroundColor: '#ffffff',
     borderRadius: 10,
@@ -28,7 +27,6 @@ const styles = StyleSheet.create({
     height: 50,
     paddingHorizontal: 20,
     borderWidth: 1,
-    borderRadius: 7
   },
   textinputCompo: {
     marginHorizontal: 10

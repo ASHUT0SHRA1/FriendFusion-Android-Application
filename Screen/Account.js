@@ -9,43 +9,40 @@ import axios from 'axios';
 import MyPost from './MyPost';
 import settingIcon from '../Assets/gear.png'
 import UserupdateModal from '../Component/UserupdateModal';
+import { PostContext } from '../context/postcontext';
 const Account = () => {
     const [state, setstate] = useContext(AuthContext);
-    const { user, token } = state;
+    const { user } = state;
     const [loading, setloading] = useState(false);
     const [name, setname] = useState(user?.name);
     const [email] = useState(user?.email);
-
+    const [mypost] = useContext(PostContext)
+    const [image ,setimage] = useState(user?.image);
     const [password, setpassword] = useState(user?.password);
     const [visible, setvisible] = useState(false);
     const handleUpdate = async () => {
         try {
             setloading(true);
-            const upadteUser = { name, email, password };
+            const upadteUser = { name, email, password , image };
             const { data } = await axios.put('/auth/update', upadteUser);
-
             setloading(false);
             let UD = JSON.stringify(data);
-            // console.log(token);
             setstate({ ...state, user: UD?.upadteUser })
         } catch (error) {
-            // console.log(error);
-            // console.log(token)
             Alert.alert(error.response.data.message);
             setloading(false)
         }
     }
     return (
         <View style={styles.container}>
-            {/* <Headermenu/> */}
             <>
                 {
-                    visible ? <UserupdateModal handleUpdate={handleUpdate} visible={visible} setVisible={setvisible} state={state} setname={setname} setpassword={setpassword} loading={loading} setloading={setloading} /> : null
+                    visible ? <UserupdateModal handleUpdate={handleUpdate} visible={visible} setVisible={setvisible} state={state} name={name} setname={setname} password={password} setpassword={setpassword} loading={loading} setloading={setloading} image={image} setimage={setimage} /> : null
                 }
                 <View>
                     <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 30, marginLeft: 10, borderBottomWidth: 1, paddingBottom: 10, marginRight: 20 }}>
                         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                            <Image source={UserImg} style={{ height: 80, width: 80, borderRadius: 30 }} />
+                            <Image source={image ?  {uri : image} : UserImg} style={{ height: 80, width: 80, borderRadius: 30 }} />
                             <View style={{ 
                                 marginLeft: 10,   
                                 }}>

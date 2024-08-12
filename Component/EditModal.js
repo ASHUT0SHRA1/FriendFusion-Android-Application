@@ -54,7 +54,6 @@ const EditModal = ({ modalVisible, setModalVisible, post }) => {
       >
         <View style={styles.centeredView}>
           <View style={styles.modalView}>
-            {/* <Text>{JSON.stringify(post, null, 4)}</Text> */}
             <Text style={styles.modalText}>Update Your Posts</Text>
             <Text>Title</Text>
             <TextInput

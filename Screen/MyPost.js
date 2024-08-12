@@ -9,9 +9,7 @@ const MyPost = () => {
   const [loading, setloading] = useState(false);
   const [state] = useContext(AuthContext);
   const id = state.user._id;
-  useEffect(() => {
 
-  }, [mypost]);
   const getmyPost = async () => {
     try {
       setloading(true);

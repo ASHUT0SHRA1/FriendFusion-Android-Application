@@ -14,6 +14,7 @@ const Chatscreen = () => {
   const [messages, setMessages] = useState([]);
   const [messageText, setMessageText] = useState('');
   const [recepientName, setrecepientName] = useState('');
+  const [recepientImg  , setreceepientImg] = useState('');
 
   // Fetch messages on mount
   useEffect(() => {
@@ -36,6 +37,8 @@ const Chatscreen = () => {
       setMessages(response.data.messages);
       setrecepientName(response.data.recepientId.name);
       console.log(recepientName)
+      setreceepientImg(response.data.recepientId.image) ; 
+      
     } catch (error) {
       console.error(error);
 
@@ -51,6 +54,7 @@ const Chatscreen = () => {
         messageType: 'text', // Assuming text messages for now
         messageText,
       });
+
       setMessageText(''); // Clear message input after sending
       getMessages(userid, selecteduserid); // Update messages
     } catch (error) {
@@ -65,7 +69,7 @@ const Chatscreen = () => {
         <Pressable onPress={() => navigation.replace('Friend')}>
           <Image source={backIcon} style={{ height: 20, width: 20, marginLeft: 20 }} />
         </Pressable>
-        <Image source={userIcon} style={{ height: 20, width: 20, borderRadius: 10, marginLeft: 10 }} />
+        <Image source={recepientImg ? {uri : recepientImg} : userIcon} style={{ height: 30, width: 30, borderRadius: 15, marginLeft: 10 }} />
         <Text style={{ fontSize: 18, color: 'black', marginLeft: 10 }}>{recepientName}</Text>
       </View>
       <ScrollView

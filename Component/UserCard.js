@@ -29,7 +29,7 @@ const UserCard = ({ items, userId , isRequest }) => {
                             <View style={
                                 styles.imgcontainer
                             }>
-                                <Image source={userIcon} style={{ height: 30, width: 30, }} />
+                                <Image source={ item?.image  ? {uri : item?.image} : userIcon} style={{ height: 30, width: 30, }} />
                             </View>
                             <View style={{ alignItems: 'center' }}>
                                 <Text style={{ fontSize: 18, textAlign: "center" }}>{item?.name}</Text>

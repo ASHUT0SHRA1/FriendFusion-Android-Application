@@ -1,14 +1,30 @@
 import { Alert, Image, Modal, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React, { useContext, useState } from 'react'
 import { TextInput } from 'react-native-gesture-handler'
+import ImagePicker from 'react-native-image-crop-picker';
+import UserImg from '../Assets/account.png'
 
-const UserupdateModal = ({ handleUpdate, visible, setVisible, state   ,setname , setpassword , loading , setloading}) => {
+const UserupdateModal = ({ handleUpdate ,image ,  setimage ,  visible, setVisible, state, setname, setpassword, loading, name, password, setloading }) => {
     const { user, token } = state;
-    const [name] = useState(user?.name);
     const [email] = useState(user?.email);
-    const [password] = useState(user?.password);
     const handleUpdateCancel = () => {
         setVisible(!visible)
+        setname(user?.name);
+        setpassword(user?.password)
+    }
+    const handlePhoto = () => {
+        ImagePicker.openPicker({
+            width: 300,
+            height: 400,
+            cropping: true, 
+            includeBase64 :true , 
+            avoidEmptySpaceAroundImage : true ,
+            freeStyleCropEnabled : true 
+          }).then(image => {
+            console.log(image);
+            const data = `data:${image.mime};base64,${image.data}`
+            setimage(data);
+          });
     }
     return (
         <View style={styles.centeredView}>
@@ -17,49 +33,55 @@ const UserupdateModal = ({ handleUpdate, visible, setVisible, state   ,setname ,
                 visible={visible}
             >
                 <View style={styles.centeredView}>
-                   <View style={styles.modalView}>
-                   <View >
-                        <View style={styles.inpContainer} >
-                            <Text style={styles.textt}>
-                                Name
-                            </Text>
-                            <TextInput onChangeText={(text) => { setname(text) }} value={name} style={styles.textinp} />
-                        </View>
-
-                        <View style={styles.inpContainer}>
-                            <Text style={styles.textt}>
-                                Email
-                            </Text>
-                            <TextInput value={state?.user.email} style={styles.textinp}
-                                editable={false} />
-                        </View>
-
-                        <View style={styles.inpContainer}>
-                            <Text style={styles.textt}>
-                                password
-                            </Text>
-                            <TextInput secureTextEntry={true} onChangeText={(text) => { setpassword(text) }} value={password} style={styles.textinp} />
-
-                        </View>
-
-                    </View>
-                    <View>
-                        <View style={{ alignItems: 'center' }}>
-                            <TouchableOpacity style={styles.btn} onPress={handleUpdate}>
-                                <Text style={{ color: 'white', fontSize: 16, textAlign: 'center' }}>
-                                    {!loading ? "Update Profile" : "please wait"}
-                                </Text>
+                    <View style={styles.modalView}>
+                        <View style={{ justifyContent: 'center', alignItems: 'center' }}>
+                            <TouchableOpacity onPress={()=>handlePhoto()}>
+                                <Image source={image ?  {uri : image}  : UserImg } style={{ height: 80, width: 80, borderRadius: 30 }} />
                             </TouchableOpacity>
                         </View>
-                        <View style={{ alignItems: 'center' }}>
-                            <TouchableOpacity style={styles.btn} onPress={handleUpdateCancel}>
-                                <Text style={{ color: 'white', fontSize: 16, textAlign: 'center' }}>
-                                    {!loading ? "Cancle" : "please wait"}
+                        <View >
+
+                            <View style={styles.inpContainer} >
+                                <Text style={styles.textt}>
+                                    Name
                                 </Text>
-                            </TouchableOpacity>
+                                <TextInput onChangeText={(text) => setname(text)} value={name} style={styles.textinp} />
+                            </View>
+
+                            <View style={styles.inpContainer}>
+                                <Text style={styles.textt}>
+                                    Email
+                                </Text>
+                                <TextInput value={state?.user.email} style={styles.textinp}
+                                    editable={false} />
+                            </View>
+
+                            <View style={styles.inpContainer}>
+                                <Text style={styles.textt}>
+                                    password
+                                </Text>
+                                <TextInput secureTextEntry={true} onChangeText={(text) => { setpassword(text) }} value={password} style={styles.textinp} />
+
+                            </View>
+
+                        </View>
+                        <View>
+                            <View style={{ alignItems: 'center' }}>
+                                <TouchableOpacity style={styles.btn} onPress={handleUpdate}>
+                                    <Text style={{ color: 'white', fontSize: 16, textAlign: 'center' }}>
+                                        {!loading ? "Update Profile" : "please wait"}
+                                    </Text>
+                                </TouchableOpacity>
+                            </View>
+                            <View style={{ alignItems: 'center' }}>
+                                <TouchableOpacity style={styles.btn} onPress={handleUpdateCancel}>
+                                    <Text style={{ color: 'white', fontSize: 16, textAlign: 'center' }}>
+                                        {!loading ? "Cancle" : "please wait"}
+                                    </Text>
+                                </TouchableOpacity>
+                            </View>
                         </View>
                     </View>
-                   </View>
                 </View>
             </Modal>
         </View>
