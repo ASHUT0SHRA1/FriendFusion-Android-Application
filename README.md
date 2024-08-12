@@ -7,8 +7,6 @@ This is a new [**React Native**](https://reactnative.dev) project, bootstrapped 
 <a href="" target="blank"><img align="center" src="https://github.com/user-attachments/assets/30ab6fad-19d5-4826-84ff-c3f35d7749ea" height="500"  /></a>
 <a href="" target="blank"><img align="center" src="https://github.com/user-attachments/assets/a37d6b36-f5ae-40f0-8277-4645bd3d6780" height="500"  /></a>
 
-<a href="" target="blank"><img align="center" src="https://github.com/user-attachments/assets/c22a8898-0ad3-4c41-bb39-20fea487a7bf" height="500" /></a> <a href="" target="blank"><img align="center" src="https://github.com/user-attachments/assets/5e9346e1-5d01-4b2a-9377-08915e4e1511" height="500"  /></a>
-
 https://github.com/user-attachments/assets/7ef67507-dd85-4f8a-a208-0ecd8438e93c 
 
 # Getting Started
